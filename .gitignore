@@ -8,3 +8,5 @@ test/data_mapper.log
 test/mongo_mapper.log
 test/sequel.log
 /Gemfile.lock
+/.buildpath
+/.project
