@@ -1004,7 +1004,7 @@ begin
       @machine.other_states(*states)
       
       graph = GraphViz.new('G')
-      states.each {|state| graph.add_node(state.to_s)}
+      states.each {|state| graph.add_nodes(state.to_s)}
       
       @machine.events << @event = StateMachine::Event.new(@machine , :park)
       @event.transition :parked => :idling
@@ -1031,7 +1031,7 @@ begin
       @machine.other_states(*states)
       
       graph = GraphViz.new('G')
-      states.each {|state| graph.add_node(state.to_s)}
+      states.each {|state| graph.add_nodes(state.to_s)}
       
       @machine.events << @event = StateMachine::Event.new(@machine , :park, :human_name => 'Park')
       @event.transition :parked => :idling

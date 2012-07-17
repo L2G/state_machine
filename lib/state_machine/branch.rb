@@ -160,7 +160,7 @@ module StateMachine
         # Generate an edge between each from and to state
         from_states.each do |from_state|
           from_state = from_state ? from_state.to_s : 'nil'
-          edges << graph.add_edge(from_state, loopback ? from_state : to_state, :label => event.to_s)
+          edges << graph.add_edges(from_state, loopback ? from_state : to_state, :label => event.to_s)
         end
         
         edges

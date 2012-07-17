@@ -768,7 +768,7 @@ begin
       states = [:parked, :idling]
       
       graph = GraphViz.new('G')
-      states.each {|state| graph.add_node(state.to_s)}
+      states.each {|state| graph.add_nodes(state.to_s)}
       
       @branch = StateMachine::Branch.new(:from => :idling, :to => :parked)
       @edges = @branch.draw(graph, :park, states)
@@ -797,7 +797,7 @@ begin
       states = [:parked, :idling, :first_gear]
       
       graph = GraphViz.new('G')
-      states.each {|state| graph.add_node(state.to_s)}
+      states.each {|state| graph.add_nodes(state.to_s)}
       
       @branch = StateMachine::Branch.new(:from => [:idling, :first_gear], :to => :parked)
       @edges = @branch.draw(graph, :park, states)
@@ -818,7 +818,7 @@ begin
       states = [:parked, :idling, :first_gear]
       
       graph = GraphViz.new('G')
-      states.each {|state| graph.add_node(state.to_s)}
+      states.each {|state| graph.add_nodes(state.to_s)}
       
       @branch = StateMachine::Branch.new(:except_from => :parked, :to => :parked)
       @edges = @branch.draw(graph, :park, states)
@@ -839,7 +839,7 @@ begin
       states = [:parked, :idling, :first_gear]
       
       graph = GraphViz.new('G')
-      states.each {|state| graph.add_node(state.to_s)}
+      states.each {|state| graph.add_nodes(state.to_s)}
       
       @branch = StateMachine::Branch.new(:to => :parked)
       @edges = @branch.draw(graph, :park, states)
@@ -859,7 +859,7 @@ begin
       @machine = StateMachine::Machine.new(Class.new)
       
       graph = GraphViz.new('G')
-      graph.add_node('parked')
+      graph.add_nodes('parked')
       
       @branch = StateMachine::Branch.new(:from => :parked)
       @edges = @branch.draw(graph, :park, [:parked])
@@ -876,7 +876,7 @@ begin
       @machine = StateMachine::Machine.new(Class.new)
       
       graph = GraphViz.new('G')
-      graph.add_node('parked')
+      graph.add_nodes('parked')
       
       @branch = StateMachine::Branch.new(:from => :idling, :to => nil)
       @edges = @branch.draw(graph, :park, [nil, :idling])
